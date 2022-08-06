@@ -85,14 +85,16 @@ describe('Add additional products of the same type to the shopping cart.', () =>
 // And the total sales tax amount for the shopping cart should equal 35.00
 // And the shopping cart’s total price should equal 314.96
 describe('Calculate the tax rate of the shopping cart with multiple items', () => {
-    const cart = new Cart(.125)
+    const cart = new Cart()
     const soap = new Product({
         name: 'Dove Soap',
-        price: 39.99
+        price: 39.99,
+        tax: .125
     });
     const deo = new Product({
         name: 'Axe Deo',
-        price: 99.99
+        price: 99.99,
+        tax: .125
     });
 
     cart.addItem(soap, 2)
